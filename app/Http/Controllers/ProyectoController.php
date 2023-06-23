@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proyecto;
+    use App\Models\Proyecto;
 use Illuminate\Http\Request;
 
 /**
@@ -16,6 +16,12 @@ class ProyectoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+ 
     public function index()
     {
         $proyectos = Proyecto::paginate();
